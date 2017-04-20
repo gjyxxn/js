@@ -1,1 +1,1 @@
-# js reviews
+# js practice
