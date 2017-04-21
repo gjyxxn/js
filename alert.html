@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>函数接受传参并弹出</title>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <input type="text" value="北京市"/>
+    <input type="text" value="朝阳区"/>
+    <input type="button" id="btn" value="传参"/>
+</form>
+<script>
+    function fn(v1,v2){
+        alert(v1)
+        alert(v2)
+    }
+    var btn = document.getElementById("btn");
+    var oinput = document.getElementsByTagName("input");
+    btn.onclick=function(){
+        fn(oinput[0].value,oinput[1].value)
+    }
+</script>
+</body>
+</html>

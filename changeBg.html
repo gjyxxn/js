@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: red;
+        }
+        span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+        ul>li{
+            list-style: none;
+            width: 50px;
+            height: 20px;
+            float: left;
+            border: 1px solid #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul>
+        <li>新闻</li>
+        <li>娱乐</li>
+        <li>体育</li>
+        <li>电影</li>
+        <li>音乐</li>
+        <li>旅游</li>
+    </ul>
+    <script>
+        var changBg=function(ele,attr,value){
+            ele.style[attr] = value;
+        }
+        var spans = document.getElementsByTagName("span");
+        var lis = document.getElementsByClassName("li");
+        var colors = ["pink","green","blue"];
+        var navColor = ["red","#dec","skyblue"];
+        for(var i=0;i<spans.length;i++){
+            changBg(spans[i],"background",colors[i]);
+            spans[i].onclick=function(){
+                console.log(this.style.background);
+                this.style.border = "3px solid #fff";
+                document.body.style.background = this.style.background;
+            }
+        }
+    </script>
+</body>
+</html>

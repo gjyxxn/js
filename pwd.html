@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>记住密码并提示</title>
+    <style>
+        div{
+            width: 200px;
+            height: 80px;
+            background: orange;
+            color: #2e2e2e;
+            border: 2px solid orangered;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<label>
+    <input type="checkbox"/>两周之内记住密码自动登录
+</label>
+<div>
+    为了您的信息安全，请不要在网吧或公共电脑上使用此功能
+</div>
+<script>
+    var div = document.getElementsByTagName("div")[0];
+    var label = document.getElementsByTagName("label")[0];
+    label.onmouseover = function(){
+        div.style.display="block"
+    }
+    label.onmouseout = function(){
+        div.style.display="none"
+    }
+</script>
+</body>
+</html>

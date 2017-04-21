@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标移入改变样式</title>
+    <style>
+        div{
+            width:200px;
+            height: 200px;
+            background: #000;
+            color: #fff;
+            margin: 0 auto;
+        }
+        p{
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            vertical-align: middle;
+            background: #000;
+        }
+        .hoverD{
+            background: #f00;
+        }
+        .hoverP{
+            background: #fff;
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>鼠标移入改变样式，鼠标移除恢复</p>
+    </div>
+    <script>
+        var div = document.getElementsByTagName("div")[0];
+        var p = document.getElementsByTagName("P")[0];
+        div.onmouseover  = function(){
+            this.className="hoverD"
+            p.className="hoverP"
+        }
+        div.onmouseout = function(){
+            this.className=""
+            p.className=""
+        }
+    </script>
+</body>
+</html>

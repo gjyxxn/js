@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>控制div属性</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            background: #dec;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">变宽</button>
+    <button class="btn">变高</button>
+    <button class="btn">变色</button>
+    <button class="btn">隐藏</button>
+    <button class="btn">重置</button>
+    <div id="div1"></div>
+
+    <script>
+        var changeStyle = function (elem, attr, value)
+        {
+            elem.style[attr] = value
+        };
+        window.onload = function(){
+            var btn = document.getElementsByTagName("button");
+            var Odiv = document.getElementById("div1");
+            var Ocss = ["width","height","background","display","display"];
+            var Oattr = ["400px","400px","yellow","none","block"];
+            for(var i=0;i<btn.length;i++){
+                btn[i].index = i;
+                console.log(i)
+                btn[i].onclick = function(){
+                    this.index == btn.length - 1 && (Odiv.style.cssText = "");
+                    changeStyle(Odiv, Ocss[this.index], Oattr[this.index])
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
