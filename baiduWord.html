@@ -4,28 +4,56 @@
     <meta charset="UTF-8">
     <title>百度输入法</title>
     <style>
-        .box{
-            width: 100px;
-            height: auto;
-            margin: 0 auto;
+        body{
+            margin: 0;
+            padding: 0;
         }
-
+        p{
+            margin-left: 35px;
+        }
+        ul{
+            position: absolute;
+            top:30px;
+        }
         ul li{
-            border: 1px solid #0086b3;
+            border: 1px solid #dec;
+            list-style: none;
+            color: blue;
+            width: 50px;
             text-align: center;
-            list-style:none;
-            line-height: 25px;
+        }
+        ul li:hover{background:#d9e1f6;}
+        .none{
+            display: none;
+        }
+        .block{
+            display: block;
         }
     </style>
 </head>
 <body>
-<div class="box">
-    <button>输入法</button>
-    <ul>
-        <li>手写</li>
+    <p>
+        <button>输入法</button>
+    </p>
+    <ul class="none">
         <li>拼音</li>
-        <li><span>关闭</span></li>
+        <li>手写</li>
+        <li id="close">关闭</li>
     </ul>
-</div>
+    <script>
+        var button = document.getElementsByTagName("button")[0];
+        var close = document.getElementById("close");
+        var ul = document.getElementsByTagName("ul")[0];
+        button.onclick = function(){
+            if(ul.className=="none"){
+                ul.className="block"
+            }else{
+                ul.className="none"
+            }
+        }
+        close.onclick = function(){
+            ul.className="none"
+        }
+    </script>
 </body>
 </html>
