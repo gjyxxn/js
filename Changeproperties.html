@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        p{
+            width: 200px;
+            height: 200px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <form action="">
+        <div>
+            <label for="">属性名</label>
+            <input type="text" value="background"/>
+        </div>
+        <div>
+            <label for="">属性值</label>
+            <input type="text" value="red"/>
+        </div>
+        <input type="button" value="确定">
+        <input type="button" value="重置">
+    </form>
+    <p>在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</p>
+</div>
+<script>
+    var p = document.getElementsByTagName("p")[0];
+    var input = document.getElementsByTagName("input");
+    function attr(attr,val){
+        p.style[attr] = val
+    }
+    input[2].onclick = function(){
+        console.log(input[0].value)
+        console.log(input[1].value)
+        attr(input[0].value,input[1].value)
+    }
+    input[3].onclick = function(){
+        attr("background","#000")
+    }
+</script>
+</body>
+</html>
